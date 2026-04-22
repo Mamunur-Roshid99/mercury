@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anas AI – Your Smart Chat Buddy</title>
+  <meta name="description" content="A friendly, fast AI chatbot that answers your questions in simple English or Bangla. Like a smart classmate always ready to help!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+
+    <!-- Background blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Chat Container -->
+    <div class="chat-container" id="chatContainer">
+
+      <!-- Header -->
+      <header class="chat-header">
+        <div class="bot-avatar-wrap">
+          <div class="bot-avatar">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="12" fill="url(#grad1)"/>
+              <circle cx="13" cy="15" r="2.5" fill="white"/>
+              <circle cx="23" cy="15" r="2.5" fill="white"/>
+              <path d="M12 22c0 0 2 3 6 3s6-3 6-3" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M18 6v3M10 8l2 2M26 8l-2 2" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="grad1" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#7C3AED"/>
+                  <stop offset="1" stop-color="#4F46E5"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="status-dot"></div>
+        </div>
+        <div class="bot-info">
+          <h1 class="bot-name">Anas AI</h1>
+          <span class="bot-status">Online · Always ready 💬</span>
+        </div>
+        <button class="clear-btn" id="clearBtn" title="Clear Chat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="3 6 5 6 21 6"/>
+            <path d="M19 6l-1 14H6L5 6"/>
+            <path d="M10 11v6M14 11v6"/>
+            <path d="M9 6V4h6v2"/>
+          </svg>
+        </button>
+      </header>
+
+      <!-- Messages Area -->
+      <main class="messages-area" id="messagesArea" role="log" aria-live="polite">
+        <!-- Intro bubble -->
+        <div class="message bot-message intro-message" id="introMessage">
+          <div class="avatar-sm">🤖</div>
+          <div class="bubble">
+            <p>Hey! I'm <strong>Anas AI</strong> 👋</p>
+            <p>Ask me anything — general questions, coding help, study stuff, or just chat. I also understand <strong>Bangla</strong>!</p>
+            <div class="quick-btns" id="quickBtns">
+              <button class="quick-btn" data-msg="What can you help me with?">🤔 What can you do?</button>
+              <button class="quick-btn" data-msg="Help me with coding">💻 Coding help</button>
+              <button class="quick-btn" data-msg="আমাকে পড়াশোনায় সাহায্য করো">📚 পড়াশোনা</button>
+              <button class="quick-btn" data-msg="Give me a motivational quote">✨ Motivation</button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Typing Indicator (hidden by default) -->
+      <div class="typing-indicator hidden" id="typingIndicator">
+        <div class="avatar-sm">🤖</div>
+        <div class="typing-bubble">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <!-- Input Area -->
+      <footer class="input-area">
+        <div class="input-wrap">
+          <textarea
+            id="userInput"
+            class="user-input"
+            placeholder="Type a message…"
+            rows="1"
+            maxlength="500"
+            aria-label="Message input"
+          ></textarea>
+          <button class="send-btn" id="sendBtn" aria-label="Send message" disabled>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+        </div>
+        <p class="footer-note">Anas AI · Powered by HTML/CSS/JS · v1.0</p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
