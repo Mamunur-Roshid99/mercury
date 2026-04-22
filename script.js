@@ -1,5 +1,5 @@
 // =============================================
-//  Anas AI – Chatbot Brain (HTML/CSS/JS)
+//  Marcury – Chatbot Brain (HTML/CSS/JS)
 // =============================================
 
 // ---- Knowledge Base ----
@@ -7,29 +7,27 @@ const KB = {
 
   // --- Greetings ---
   greetings: {
-    patterns: [/^(hi|hello|hey|hiya|yo|sup|হ্যালো|হ্যালো|হেই|আস্সালামু আলাইকুম|সালাম)/i],
+    patterns: [/^(hi|hello|hey|hiya|yo|sup)/i],
     responses: [
       "Hey there! 👋 Great to see you. Ask me anything — coding, study, or just chat!",
       "Hello! 😊 I'm here and ready to help. What's on your mind?",
-      "হ্যালো! 👋 কেমন আছো? আমি Anas AI — যেকোনো প্রশ্ন করো, আমি সাহায্য করবো!",
       "Hey hey! What can I help you with today? 🚀"
     ]
   },
 
   howAreYou: {
-    patterns: [/how are you|how r u|how do you do|তুমি কেমন আছো|আপনি কেমন আছেন|কেমন আছো/i],
+    patterns: [/how are you|how r u|how do you do/i],
     responses: [
       "I'm doing great, thanks for asking! 😄 Always happy to chat. How about you?",
-      "Feeling awesome and ready to help! 💪 What do you need?",
-      "ভালো আছি, ধন্যবাদ! 😊 তুমি কেমন আছো? কোনো প্রশ্ন থাকলে বলো।"
+      "Feeling awesome and ready to help! 💪 What do you need?"
     ]
   },
 
   // --- What can you do ---
   capabilities: {
-    patterns: [/what can you (do|help)|what are you|তুমি কী করতে পারো|আমাকে কীভাবে সাহায্য/i],
+    patterns: [/what can you (do|help)|what are you/i],
     responses: [
-      "I can help you with:\n• 💻 Coding questions (HTML, CSS, JS, Python…)\n• 📚 Study & homework help\n• 🌐 General knowledge\n• 💡 Ideas & motivation\n• 🇧🇩 Bengali or English — your choice!\n\nJust ask away! 😊"
+      "I can help you with:\n• 💻 Coding questions (HTML, CSS, JS, Python…)\n• 📚 Study & homework help\n• 🌐 General knowledge\n• 💡 Ideas & motivation\n\nJust ask away! 😊"
     ]
   },
 
@@ -53,7 +51,7 @@ const KB = {
   javascript: {
     patterns: [/\bjavascript\b|\bjs\b|\bnode\.?js\b/i],
     responses: [
-      "JavaScript brings pages to life! ⚡\n\nQuick example:\n```\nconst name = \"Anas\";\nconsole.log(\"Hello, \" + name);\n```\nAre you stuck on something specific — functions, loops, APIs, DOM?",
+      "JavaScript brings pages to life! ⚡\n\nQuick example:\n```\nconst name = \"User\";\nconsole.log(\"Hello, \" + name);\n```\nAre you stuck on something specific — functions, loops, APIs, DOM?",
       "JS is awesome for making interactive websites! 🚀 You can do DOM manipulation, fetch APIs, build full apps. What do you need help with?"
     ]
   },
@@ -84,7 +82,7 @@ const KB = {
   function: {
     patterns: [/\bfunction\b|\bmethod\b/i],
     responses: [
-      "Functions are reusable blocks of code! In JS:\n```js\nfunction greet(name) {\n  return \"Hello, \" + name + \"!\";\n}\ngreet(\"Anas\"); // Hello, Anas!\n```\nArrow functions are also popular: `const greet = (name) => \"Hello, \" + name;`"
+      "Functions are reusable blocks of code! In JS:\n```js\nfunction greet(name) {\n  return \"Hello, \" + name + \"!\";\n}\ngreet(\"User\"); // Hello, User!\n```\nArrow functions are also popular: `const greet = (name) => \"Hello, \" + name;`"
     ]
   },
 
@@ -104,42 +102,38 @@ const KB = {
 
   // --- Study Help ---
   math: {
-    patterns: [/\bmath\b|\bcalculus\b|\balgebra\b|\bgeometry\b|\bগণিত\b/i],
+    patterns: [/\bmath\b|\bcalculus\b|\balgebra\b|\bgeometry\b/i],
     responses: [
-      "Math can be tricky but I'll help! 🔢 Share the problem and I'll walk you through it step by step.",
-      "গণিতে কোনো সমস্যা? চিন্তা নেই! প্রশ্নটা লিখো, আমি সহজভাবে বুঝিয়ে দেবো। 😊"
+      "Math can be tricky but I'll help! 🔢 Share the problem and I'll walk you through it step by step."
     ]
   },
 
   physics: {
-    patterns: [/\bphysics\b|\bpদার্থ\b/i],
+    patterns: [/\bphysics\b/i],
     responses: [
-      "Physics questions? I'm here! ⚛️ Share your topic (motion, electricity, waves?) and I'll explain simply.",
-      "পদার্থবিজ্ঞানে সাহায্য লাগবে? অবশ্যই! কোন টপিক — বল, গতি, তাপ, বিদ্যুৎ? বলো! 😊"
+      "Physics questions? I'm here! ⚛️ Share your topic (motion, electricity, waves?) and I'll explain simply."
     ]
   },
 
   study: {
-    patterns: [/study|homework|assignment|exam|পড়াশোনা|পরীক্ষা|হোমওয়ার্ক/i],
+    patterns: [/study|homework|assignment|exam/i],
     responses: [
-      "Study mode activated! 📚 Tell me your subject or topic and I'll help you understand it quickly.",
-      "পড়াশোনায় সাহায্য লাগবে? বলো কোন সাবজেক্ট — আমি সহজ ভাষায় বুঝিয়ে দেবো! 📚"
+      "Study mode activated! 📚 Tell me your subject or topic and I'll help you understand it quickly."
     ]
   },
 
   // --- Motivation ---
   motivation: {
-    patterns: [/motivat|inspire|quote|মনোবল|উৎসাহ/i],
+    patterns: [/motivat|inspire|quote/i],
     responses: [
       "Here's one for you 💪\n\n*\"The secret of getting ahead is getting started.\"* — Mark Twain\n\nYou've got this! One step at a time. 🚀",
-      "You're doing amazing just by showing up! 🌟\n\n*\"It does not matter how slowly you go as long as you do not stop.\"* — Confucius",
-      "তোমার জন্য একটা কথা 💛\n\n*\"কঠিন পরিশ্রমের কোনো বিকল্প নেই।\"*\n\nআজকে একটা ছোট লক্ষ্য ঠিক করো এবং সেটা শেষ করো! ✅"
+      "You're doing amazing just by showing up! 🌟\n\n*\"It does not matter how slowly you go as long as you do not stop.\"* — Confucius"
     ]
   },
 
   // --- Time / Date ---
   time: {
-    patterns: [/what time|what('s| is) the (time|date)|সময় কত|আজকে কত তারিখ/i],
+    patterns: [/what time|what('s| is) the (time|date)/i],
     responses: [
       () => {
         const now = new Date();
@@ -150,49 +144,36 @@ const KB = {
 
   // --- Identity ---
   whoAreYou: {
-    patterns: [/who are you|what are you|তুমি কে|আপনি কে|তোমার নাম/i],
+    patterns: [/who are you|what are you/i],
     responses: [
-      "I'm **Anas AI** 🤖 — a friendly chatbot built with HTML, CSS & JavaScript!\n\nI'm here to help with coding, studies, general questions, or just a fun chat. Think of me as your smart classmate! 😊",
-      "আমি **Anas AI** 🤖 — একটি বন্ধুত্বপূর্ণ চ্যাটবট। HTML, CSS এবং JavaScript দিয়ে তৈরি!\n\nতোমার প্রশ্নের উত্তর দিতে সবসময় প্রস্তুত 😊"
-    ]
-  },
-
-  // --- Bangla General ---
-  banglaHelp: {
-    patterns: [/বাংলায়|বাংলাতে|bangla/i],
-    responses: [
-      "হ্যাঁ! আমি বাংলায়ও কথা বলতে পারি 🇧🇩 তোমার প্রশ্ন বাংলায় করো, আমি বাংলায় উত্তর দেবো।",
-      "অবশ্যই! বাংলায় কথা বলতে আমার কোনো সমস্যা নেই 😊 বলো কী জানতে চাও?"
+      "I'm **Marcury** 🤖 — a friendly chatbot built with HTML, CSS & JavaScript!\n\nI'm here to help with coding, studies, general questions, or just a fun chat. Think of me as your smart classmate! 😊"
     ]
   },
 
   // --- Thanks ---
   thanks: {
-    patterns: [/thank|thanks|ধন্যবাদ|থ্যাংকস/i],
+    patterns: [/thank|thanks/i],
     responses: [
       "You're welcome! 😊 Anything else I can help you with?",
-      "Happy to help! 🌟 Feel free to ask more anytime.",
-      "ধন্যবাদ তোমাকেও! 😊 আর কিছু জানতে চাইলে বলো।"
+      "Happy to help! 🌟 Feel free to ask more anytime."
     ]
   },
 
   // --- Bye ---
   bye: {
-    patterns: [/bye|goodbye|see you|cya|আল্লাহ হাফেজ|বিদায়/i],
+    patterns: [/bye|goodbye|see you|cya/i],
     responses: [
       "Goodbye! 👋 Come back anytime. Take care!",
-      "See you later! 😊 It was nice chatting. Good luck!",
-      "আল্লাহ হাফেজ! 👋 আবার এসো। ভালো থেকো!"
+      "See you later! 😊 It was nice chatting. Good luck!"
     ]
   },
 
   // --- Joke ---
   joke: {
-    patterns: [/joke|funny|হাসি|মজা|জোকস/i],
+    patterns: [/joke|funny/i],
     responses: [
       "Here's one 😄\n\nWhy do programmers prefer dark mode?\n*Because light attracts bugs!* 🐛",
-      "Why did the JavaScript developer go broke?\n*Because he used up all his cache!* 💸😄",
-      "একটা মজার কথা 😄\n\nএকজন প্রোগ্রামার কেন সবসময় অন্ধকারে কাজ করে?\n*কারণ আলো থাকলে bugs আসে!* 🐛"
+      "Why did the JavaScript developer go broke?\n*Because he used up all his cache!* 💸😄"
     ]
   },
 
@@ -233,17 +214,12 @@ function getBotResponse(msg) {
     } catch {}
   }
 
-  if (/\b(what is|what are|define|explain|বলো|কী|কি)\b/i.test(msg)) {
+  if (/\b(what is|what are|define|explain)\b/i.test(msg)) {
     return `Good question! 🤔 I don't have a detailed answer for that yet, but try searching on Google or Wikipedia for more info. Want me to help with something else?`;
   }
 
-  if (/\b(how to|how do|কীভাবে|কিভাবে)\b/i.test(msg)) {
+  if (/\b(how to|how do)\b/i.test(msg)) {
     return `Hmm, I'd love to help! Can you be a little more specific? Like — is this a coding question, study topic, or something else? 😊`;
-  }
-
-  // Bangla fallback
-  if (/[\u0980-\u09FF]/.test(msg)) {
-    return `তোমার প্রশ্নটা ভালো! 😊 কিন্তু আমি এই বিষয়ে নিশ্চিত নই। একটু বিস্তারিত বললে আরও ভালো সাহায্য করতে পারবো।`;
   }
 
   // Generic fallback
