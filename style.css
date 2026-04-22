@@ -535,7 +535,7 @@ body {
 /* ===== Mobile Responsiveness ===== */
 @media (max-width: 540px) {
   .chat-container {
-    width: 100vw;
+    width: 60vw;
     height: 100dvh;
     border-radius: 0;
     border: none;
