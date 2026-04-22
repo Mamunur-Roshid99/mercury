@@ -532,16 +532,274 @@ body {
   color: #fca5a5 !important;
 }
 
-/* ===== Mobile Responsiveness ===== */
-@media (max-width: 540px) {
+/* =============================================
+   RESPONSIVE DESIGN — Mobile, Tablet, Desktop
+   ============================================= */
+
+/* ---- Large Tablet / Small Desktop (769px – 1024px) ---- */
+@media (max-width: 1024px) and (min-width: 769px) {
   .chat-container {
-    width: 60vw;
+    width: min(620px, 90vw);
+    height: min(780px, 88vh);
+  }
+
+  .blob-1 {
+    width: 320px;
+    height: 320px;
+  }
+
+  .blob-2 {
+    width: 280px;
+    height: 280px;
+  }
+
+  .blob-3 {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* ---- Tablet Portrait (481px – 768px) ---- */
+@media (max-width: 768px) and (min-width: 481px) {
+  html,
+  body {
+    overflow: auto;
+  }
+
+  .app-wrapper {
+    align-items: center;
+    padding: 16px;
+    min-height: 100dvh;
+  }
+
+  .chat-container {
+    width: 100%;
+    max-width: 560px;
+    height: min(700px, 85dvh);
+    border-radius: 20px;
+    border: 1px solid var(--clr-border);
+  }
+
+  /* Slightly smaller header on tablet */
+  .chat-header {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .bot-avatar {
+    width: 42px;
+    height: 42px;
+  }
+
+  .bot-name {
+    font-size: 0.95rem;
+  }
+
+  /* Comfortable bubble widths */
+  .bubble {
+    max-width: 82%;
+    font-size: 0.9rem;
+  }
+
+  /* Larger tap targets for touch */
+  .clear-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .send-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+  }
+
+  /* Quick buttons — allow wrapping */
+  .quick-btn {
+    font-size: 0.8rem;
+    padding: 7px 13px;
+  }
+
+  /* Reduce blob sizes */
+  .blob-1 {
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    left: -60px;
+  }
+
+  .blob-2 {
+    width: 220px;
+    height: 220px;
+    bottom: -50px;
+    right: -50px;
+  }
+
+  .blob-3 {
+    display: none;
+  }
+}
+
+/* ---- Mobile (max 480px) ---- */
+@media (max-width: 480px) {
+  html,
+  body {
+    overflow: hidden;
+    height: 100%;
+    height: 100dvh;
+  }
+
+  .app-wrapper {
+    align-items: stretch;
+    justify-content: stretch;
+    padding: 0;
+  }
+
+  /* Full-screen edge-to-edge on phones */
+  .chat-container {
+    width: 100%;
+    height: 100%;
     height: 100dvh;
     border-radius: 0;
     border: none;
+    box-shadow: none;
+    /* Safe area for notched phones */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
   }
 
+  /* No glow effect on mobile */
+  .chat-container:focus-within {
+    box-shadow: none;
+  }
+
+  /* Compact header */
+  .chat-header {
+    padding: 12px 14px;
+    gap: 10px;
+    /* Respect notch */
+    padding-top: max(12px, env(safe-area-inset-top));
+  }
+
+  .bot-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+  }
+
+  .bot-name {
+    font-size: 0.92rem;
+  }
+
+  .bot-status {
+    font-size: 0.68rem;
+  }
+
+  /* Larger clear button for thumb tapping */
+  .clear-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+  }
+
+  /* Messages — tighter, full width feel */
+  .messages-area {
+    padding: 14px 12px 8px;
+    gap: 12px;
+  }
+
+  .bubble {
+    max-width: 86%;
+    padding: 10px 13px;
+    font-size: 0.87rem;
+  }
+
+  /* Avatars — smaller on phone */
+  .avatar-sm {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+  }
+
+  /* Quick buttons — wrap neatly */
+  .quick-btns {
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .quick-btn {
+    font-size: 0.74rem;
+    padding: 6px 11px;
+  }
+
+  /* Typing indicator */
+  .typing-indicator {
+    padding: 0 12px 8px;
+  }
+
+  /* Input area — larger touch targets */
+  .input-area {
+    padding: 10px 12px;
+    /* Respect home bar */
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+  }
+
+  .input-wrap {
+    border-radius: 14px;
+    padding: 8px 8px 8px 14px;
+  }
+
+  .user-input {
+    font-size: 0.93rem; /* Prevents iOS zoom on focus */
+    max-height: 100px;
+  }
+
+  .send-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+  }
+
+  .send-btn svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .footer-note {
+    font-size: 0.6rem;
+    margin-top: 6px;
+  }
+
+  /* Hide blobs on small phones — performance */
   .blob {
     display: none;
+  }
+}
+
+/* ---- Very Small Phones (max 360px) ---- */
+@media (max-width: 360px) {
+  .chat-header {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .bot-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .bot-name {
+    font-size: 0.88rem;
+  }
+
+  .bubble {
+    max-width: 90%;
+    font-size: 0.84rem;
+    padding: 9px 11px;
+  }
+
+  .quick-btn {
+    font-size: 0.7rem;
+    padding: 5px 10px;
   }
 }
